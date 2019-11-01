@@ -522,8 +522,7 @@ In the repo, you will find the following files:
 
 ## For Credit
 
-This semester we will be using
-[Github Classroom](https://classroom.github.com/classrooms/42654531-18-341-fall-2018)
+This semester we will be using Github Classroom
 to hand-out as well as hand-in project code. Make sure to commit regularly and
 provide informative messages, as this will help TAs immensely to provide
 feedback.
@@ -538,7 +537,10 @@ parts include:
   that will send an **OUT** packet with **ADDR=5** and **ENDP=4**.  The packet
   should have **SYNC** and **EOP** too.  It should drive the wires in the
   interface in USBHost.sv.  We’ll receive it and check the packet with the bus
-  analyzer.
+  analyzer.  Your code should be built as a datapath using well-known sequential
+  and combinational components.  In particular, you may not just have a huge 
+  shift register with a pre-computed set of bits that get sent on the serial
+  interface.
 
 * A final, short write-up explaining your system's organization.  Alter the
   pre-lab diagram as necessary; explain the signaling variables between the
