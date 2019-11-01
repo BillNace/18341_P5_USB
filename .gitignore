@@ -1,0 +1,66 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Swapfiles and backups
+*.swp
+*.bak
+
+# Quartus Internal files
+output_files/
+!output_files/*.sof
+qar_info.json
+simulation/
+
+# Log files¬
+*.qarlog
+*.log
+
+# VCS Simulator files
+csrc/
+DVEfiles/
+simv.daidir/
+db/
+incremental_db/
+ucli.key
+inter.vpd
+.restartSimSession.tcl.old
+session.inter.vpd.tcl
+.synopsys_dve_rebuild.tcl
+
+# VCS Executables and Misc
+simv
+*.ver
+mat*_gen.mif
+
+#Other Randoms
+.DS_Store

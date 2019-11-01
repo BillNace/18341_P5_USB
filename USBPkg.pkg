@@ -1,0 +1,50 @@
+`ifndef USB_PKG
+  `define USB_PKG
+
+  `include "USB.svh"
+
+  package USBPkg;
+    /* USB Structures and Enumerations
+     * Students are encouraged to use these definitions in their code for
+     * better readability and debugging */
+
+    // Packet IDs
+    typedef enum logic [`PID_BITS-1:0] {
+        PID_OUT = 4'b0001, PID_IN = 4'b1001, PID_DATA0 = 4'b0011,
+        PID_ACK = 4'b0010, PID_NAK = 4'b1010, PID_X = 4'bxxxx
+    } pid_t;
+
+    // Generic fixed size packet
+    typedef struct {
+      pid_t pid;
+      logic [`ADDR_BITS-1:0] addr;
+      logic [`ENDP_BITS-1:0] endp;
+      logic [`PAYLOAD_BITS-1:0] payload;
+    } pkt_t;
+    const pid_t valid_pids[5] = '{PID_OUT, PID_IN, PID_DATA0, PID_ACK, PID_NAK};
+
+    /* Wrapper for USB bus states
+     * Notice that USB_NC (not connected) and USB_SE0 will result in the same
+     * value resolution on USBWires, but it may be helpful to have both
+     * definitions in case you want to drive a dummy default value */
+    typedef enum logic [1:0] {
+        USB_J = 2'b10, USB_K = 2'b01, USB_SE0 = 2'b00, USB_SE1 = 2'b11,
+        USB_NC = 2'bzz, USB_X = 2'bxx
+    } usb_bus_t;
+    const usb_bus_t valid_usb_buses[3] = '{USB_J, USB_K, USB_SE0};
+
+    // Debugging fixed size packet
+    typedef struct {
+      logic [`SYNC_BITS-1:0] sync;
+      logic [`PID_BITS-1:0] pid;
+      logic [`PID_BITS-1:0] pid_n;
+      logic [`ADDR_BITS-1:0] addr;
+      logic [`ENDP_BITS-1:0] endp;
+      logic [`PAYLOAD_BITS-1:0] payload;
+      logic [`CRC5_BITS-1:0] crc5;
+      logic [`CRC16_BITS-1:0] crc16;
+    } debug_pkt_t;
+  endpackage : USBPkg
+
+  import USBPkg::*;
+`endif
