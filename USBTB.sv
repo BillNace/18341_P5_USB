@@ -515,7 +515,7 @@ module USBTB;
       $display({"\n",
                 "-----------------------------------------------------------\n",
                 " <Started> Transaction Abort Test\n",
-                "   The `device_inst.chk_crc16` assertion will fail on ",
+                "   The `device_inst.chk_protocol` assertion will fail on ",
                 "   missing packets sent by the USBDevice... keep this in ",
                 "   mind.\n",
                 "-----------------------------------------------------------",
