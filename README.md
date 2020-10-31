@@ -1,6 +1,6 @@
 # USB Protocol Engine Project
 
-18-341: Fall Semester of 2019
+18-341: Fall Semester of 2020
 
 ## Objective and Overview
 
@@ -18,10 +18,10 @@ This is an **team** project.  See details in two sections from here.
 
 Project value | 100 points
 --- | ---
-Project start | 1 November 2018
-Part 1 due |  11 November 2018 at 1:30pm
-Project due | 18 November 2018 at 1:30pm
-Drop dead date | 13 November 2018 at 1:30pm
+Project start | 1 November 2020
+Part 1 due |  16 November 2020 at 1:30pm
+Project due | 23 November 2020 at 1:30pm
+Drop dead date | 24 November 2020 at 1:30pm
 
 Remember!  You must have committed something by the drop-dead date!  *You must
 attempt every project*.  Not uploading anything and not showing up to explain
@@ -43,8 +43,13 @@ your team's solution in on time.  Communicate with your partner right away about
 your lack of an available grace day.
 
 As a team, you should be using Git as a collaborative tool.  Your GitHub
-Classroom repository is a team repository -- make sure you join the correct
-team.  Then, communicate with your partner about workflow.  How do you intend to
+Classroom repository is a team repository.  The first one to follow the invitation
+link should make a team repo.  Name your team repo with your team number (from the
+team handout) and both Andrew IDs.  The second partner needs to make sure to
+join the correct
+team.  
+
+Then, communicate with your partner about workflow.  How do you intend to
 collaborate?  Will you branch whenever you are doing work on a feature?  Will
 you only merge when you have a working feature?  Figure this out ahead of time
 with your partner.  As with any team collaboration, communication is key.  Talk
