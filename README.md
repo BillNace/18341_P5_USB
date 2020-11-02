@@ -18,8 +18,8 @@ This is an **team** project.  See details in two sections from here.
 
 Project value | 100 points
 --- | ---
-Project start | 1 November 2020
-Part 1 due |  16 November 2020 at 1:30pm
+Project start | 2 November 2020
+Part 1 due |  11 November 2020 at 1:30pm
 Project due | 23 November 2020 at 1:30pm
 Drop dead date | 24 November 2020 at 1:30pm
 
