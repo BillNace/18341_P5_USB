@@ -1,1244 +1,1072 @@
-
-Note-[RT_BS] Larger stack needed
-  Note: Bumping stack limit from 8192 to 9216 Kbytes.
-
-Chronologic VCS simulator copyright 1991-2015
+Chronologic VCS simulator copyright 1991-2014
 Contains Synopsys proprietary information.
-Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Nov 13 10:29 2017
+Compiler version J-2014.12-SP3-1_Full64; Runtime version J-2014.12-SP3-1_Full64;  Nov 18 14:25 2021
 
 -----------------------------------------------------------
  <Started> Corrupt Read/Write Test
    The `device_inst.chk_crc16` assertion will fail on DATA0    packets sent by the USBDevice... keep this in mind.
 -----------------------------------------------------------
 
-USBTB @15: TB->Host reading with 3 fake corrupt errors
+USBTB @15: TB->Host reading with 6 fake corrupt errors
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @45: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
-Bitstream:       0000001100001111010000001000001
-Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @375: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+USBTB.device_inst.PROTECTED @35: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @365: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @405: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKJKKKJKJJKJJJJJKKJJKJJJJJJKJKK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000011100110001001111010100111110001
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'he467000000000000, crc5:'hxx, crc16:'h8f95}
-USBTB.device_inst.analyzer.usb_terminal_inst @1375: USB analyzer detected *DATA0* with PAYLOAD=e467000000000000 CRC16=8f95 (correct 8f95)
+USBTB.device_inst.PROTECTED @395: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @1365: USB analyzer detected *DATA0* with PAYLOAD=e467000000000000 CRC16=8f95 (correct 8f95)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @1725: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @1895: USB analyzer detected *ACK*
+USBTB.device_inst.PROTECTED @1715: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @1885: USB analyzer detected *ACK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @1935: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKKJJJKKJJKJKJKJKKJJJJK00J
-Bitstream:       0000001100101101010000000101110
-Packet: '{sync:'h1, pid:'h9, pid_n:'h6, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @2265: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+USBTB.device_inst.PROTECTED @1925: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @2255: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @2495: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 3295s failed at 3455s
+USBTB.device_inst.PROTECTED @2485: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 3285s failed at 3445s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 3455
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 fd9b (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKJJJKJJJKKKKKKK000
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001101100110111111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hfd9b}
-USBTB.device_inst.analyzer.usb_terminal_inst @3465: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=fd9b (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 3445
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 fd9b (correct f4bf)
+USBTB.device_inst.PROTECTED @3455: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=fd9b (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @3505: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @3675: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @3495: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @3665: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @3805: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 4605s failed at 4765s
+USBTB.device_inst.PROTECTED @3795: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 4595s failed at 4755s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 4765
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 0ee1 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJKJKKKKJJJJKJKJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001000011101110000
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hee1}
-USBTB.device_inst.analyzer.usb_terminal_inst @4775: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=0ee1 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 4755
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 0ee1 (correct f4bf)
+USBTB.device_inst.PROTECTED @4765: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=0ee1 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @4805: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @4975: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @4805: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @4975: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @5365: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 6165s failed at 6335s
+USBTB.device_inst.PROTECTED @5365: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 6165s failed at 6335s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 6335
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 7fbd (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJJJJJKKKKKKKJJJK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001011110111111 110
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h7fbd}
-USBTB.device_inst.analyzer.usb_terminal_inst @6345: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=7fbd (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 6335
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 7fbd (correct f4bf)
+USBTB.device_inst.PROTECTED @6345: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=7fbd (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @6375: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @6545: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @6385: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @6555: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @7065: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @8045: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @8075: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @8245: USB analyzer detected *ACK*
-=================================================
-
-
-USBTB @8265: Host and device reported successful read
-USBTB @8275: TB->Host reading with 2 fake corrupt errors
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @8305: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
-Bitstream:       0000001100001111010000001000001
-Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @8635: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @8665: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJKJJKKJJKJKJKKJKKJKJKKJKJJKKJJK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000010001010100000100100001000101010
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h4151000000000000, crc5:'hxx, crc16:'h5442}
-USBTB.device_inst.analyzer.usb_terminal_inst @9635: USB analyzer detected *DATA0* with PAYLOAD=4151000000000000 CRC16=5442 (correct 5442)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @9685: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @9855: USB analyzer detected *ACK*
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @9895: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKKJJJKKJJKJKJKJKKJJJJK00J
-Bitstream:       0000001100101101010000000101110
-Packet: '{sync:'h1, pid:'h9, pid_n:'h6, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @10225: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @10715: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 11515s failed at 11675s
+USBTB.device_inst.PROTECTED @7075: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 7875s failed at 8035s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 11675
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 d317 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKJJKJKKKJKKJJJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001110100011001011
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hd317}
-USBTB.device_inst.analyzer.usb_terminal_inst @11685: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=d317 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 8035
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 d317 (correct f4bf)
+USBTB.device_inst.PROTECTED @8045: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=d317 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @11715: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @11885: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @8085: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @8255: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @12335: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 13135s failed at 13295s
+USBTB.device_inst.PROTECTED @8305: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 9105s failed at 9265s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 13295
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 a1d0 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJJJJKJKJJKK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000000000101110000101
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'ha1d0}
-USBTB.device_inst.analyzer.usb_terminal_inst @13305: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=a1d0 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 9265
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 a1d0 (correct f4bf)
+USBTB.device_inst.PROTECTED @9275: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=a1d0 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @13335: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @13505: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @9315: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @9485: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @13655: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @14635: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @14665: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @14835: USB analyzer detected *ACK*
-=================================================
-
-
-USBTB @14855: Host and device reported successful read
-USBTB @14865: TB->Host reading with 1 fake corrupt errors
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @14895: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
-Bitstream:       0000001100001111010000001000001
-Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @15225: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @15255: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKJJJJJJKJKKKKJJKJJJJKJKJKJKKKK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000011101111100011101001110000000111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h71f7000000000000, crc5:'hxx, crc16:'he039}
-USBTB.device_inst.analyzer.usb_terminal_inst @16225: USB analyzer detected *DATA0* with PAYLOAD=71f7000000000000 CRC16=e039 (correct e039)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @16335: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @16505: USB analyzer detected *ACK*
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @16545: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKKJJJKKJJKJKJKJKKJJJJK00J
-Bitstream:       0000001100101101010000000101110
-Packet: '{sync:'h1, pid:'h9, pid_n:'h6, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @16875: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @17135: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 17935s failed at 18095s
+USBTB.device_inst.PROTECTED @9975: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 10775s failed at 10935s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 18095
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 5517 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKJJKJKKJJKKJJK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001110100010101010
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h5517}
-USBTB.device_inst.analyzer.usb_terminal_inst @18105: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=5517 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 10935
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 5517 (correct f4bf)
+USBTB.device_inst.PROTECTED @10945: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=5517 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @18135: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @18305: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @10985: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @11155: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @18745: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @19725: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @11605: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @12585: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @19755: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @19925: USB analyzer detected *ACK*
+USBTB.device_inst.PROTECTED @12625: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @12795: USB analyzer detected *ACK*
 =================================================
 
 
-USBTB @19945: Host and device reported successful read
-USBTB @19955: TB->Host reading with 4 fake corrupt errors
+USBTB @12825: Host and device reported successful read
+USBTB @12835: TB->Host reading with 4 fake corrupt errors
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @19985: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
-Bitstream:       0000001100001111010000001000001
-Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @20315: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+USBTB.device_inst.PROTECTED @12855: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @13185: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @20345: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJKKKJJKJKJKKJKKKJJKJKJJKJKKJKKK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000010011010000010011010000100010011
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h9059000000000000, crc5:'hxx, crc16:'hc885}
-USBTB.device_inst.analyzer.usb_terminal_inst @21315: USB analyzer detected *DATA0* with PAYLOAD=9059000000000000 CRC16=c885 (correct c885)
+USBTB.device_inst.PROTECTED @13215: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @14185: USB analyzer detected *DATA0* with PAYLOAD=4151000000000000 CRC16=5442 (correct 5442)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @21395: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @21565: USB analyzer detected *ACK*
+USBTB.device_inst.PROTECTED @14335: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @14505: USB analyzer detected *ACK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @21605: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKKJJJKKJJKJKJKJKKJJJJK00J
-Bitstream:       0000001100101101010000000101110
-Packet: '{sync:'h1, pid:'h9, pid_n:'h6, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @21935: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+USBTB.device_inst.PROTECTED @14545: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @14875: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @22135: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 22935s failed at 23105s
+USBTB.device_inst.PROTECTED @14985: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 15785s failed at 15955s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 23105
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 1efc (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKKKKJKJ00J
-Bitstream:       000000111000011000000000000000000000000000000000000000000000000000000000000000000111111 01111000
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h1efc}
-USBTB.device_inst.analyzer.usb_terminal_inst @23115: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=1efc (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 15955
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 1efc (correct f4bf)
+USBTB.device_inst.PROTECTED @15965: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=1efc (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @23145: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @23315: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @16005: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @16175: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @23455: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 24255s failed at 24415s
+USBTB.device_inst.PROTECTED @16435: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 17235s failed at 17395s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 24415
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 30b1 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJKJJJKKJKJKKKJK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001000110100001100
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h30b1}
-USBTB.device_inst.analyzer.usb_terminal_inst @24425: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=30b1 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 17395
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 30b1 (correct f4bf)
+USBTB.device_inst.PROTECTED @17405: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=30b1 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @24455: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @24625: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @17445: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @17615: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @25015: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 25815s failed at 25975s
+USBTB.device_inst.PROTECTED @18055: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 18855s failed at 19015s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 25975
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 578a (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJJKKJKJJJJJKKJJK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000000101000111101010
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h578a}
-USBTB.device_inst.analyzer.usb_terminal_inst @25985: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=578a (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 19015
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 578a (correct f4bf)
+USBTB.device_inst.PROTECTED @19025: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=578a (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @26015: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @26185: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @19065: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @19235: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @26685: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 27485s failed at 27645s
+USBTB.device_inst.PROTECTED @19315: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 20115s failed at 20275s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 27645
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 52eb (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKJJKKKKJJKJJKKJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001101011101001010
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h52eb}
-USBTB.device_inst.analyzer.usb_terminal_inst @27655: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=52eb (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 20275
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 52eb (correct f4bf)
+USBTB.device_inst.PROTECTED @20285: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=52eb (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @27685: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @27855: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @20325: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @20495: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @28205: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @29185: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @20695: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @21675: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @29215: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @29385: USB analyzer detected *ACK*
+USBTB.device_inst.PROTECTED @21715: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @21885: USB analyzer detected *ACK*
 =================================================
 
 
-USBTB @29405: Host and device reported successful read
-USBTB @29415: TB->Host reading with 3 fake corrupt errors
+USBTB @21915: Host and device reported successful read
+USBTB @21925: TB->Host reading with 5 fake corrupt errors
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @29445: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
-Bitstream:       0000001100001111010000001000001
-Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @29775: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+USBTB.device_inst.PROTECTED @21945: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @22275: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @29805: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJJKJJKKJJKKKJKKKKKJKJKKJJKJKJKJK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000001001010101100111100001010000000
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'hcd52000000000000, crc5:'hxx, crc16:'h143}
-USBTB.device_inst.analyzer.usb_terminal_inst @30775: USB analyzer detected *DATA0* with PAYLOAD=cd52000000000000 CRC16=0143 (correct 0143)
+USBTB.device_inst.PROTECTED @22305: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @23275: USB analyzer detected *DATA0* with PAYLOAD=71f7000000000000 CRC16=e039 (correct e039)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @30995: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @31165: USB analyzer detected *ACK*
+USBTB.device_inst.PROTECTED @23415: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @23585: USB analyzer detected *ACK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @31205: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKKJJJKKJJKJKJKJKKJJJJK00J
-Bitstream:       0000001100101101010000000101110
-Packet: '{sync:'h1, pid:'h9, pid_n:'h6, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @31535: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+USBTB.device_inst.PROTECTED @23625: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @23955: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @31675: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 32475s failed at 32635s
+USBTB.device_inst.PROTECTED @24345: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 25145s failed at 25305s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 32635
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 dac6 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJJJKJKKKJJKKKJJJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000000110001101011011
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hdac6}
-USBTB.device_inst.analyzer.usb_terminal_inst @32645: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=dac6 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 25305
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 dac6 (correct f4bf)
+USBTB.device_inst.PROTECTED @25315: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=dac6 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @32675: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @32845: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @25355: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @25525: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @32945: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 33745s failed at 33915s
+USBTB.device_inst.PROTECTED @26025: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 26825s failed at 26995s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 33915
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 8fdb (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKJJJKKKKKKKJKJKK00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000110110111111 0001
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h8fdb}
-USBTB.device_inst.analyzer.usb_terminal_inst @33925: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=8fdb (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 26995
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 8fdb (correct f4bf)
+USBTB.device_inst.PROTECTED @27005: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=8fdb (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @33955: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @34125: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @27045: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @27215: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @34405: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 35205s failed at 35365s
+USBTB.device_inst.PROTECTED @27565: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 28365s failed at 28525s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 35365
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 8a8f (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKJKJJKKJJKJKK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001111000101010001
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h8a8f}
-USBTB.device_inst.analyzer.usb_terminal_inst @35375: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=8a8f (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 28525
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 8a8f (correct f4bf)
+USBTB.device_inst.PROTECTED @28535: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=8a8f (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @35405: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @35575: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @28575: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @28745: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @35985: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @36965: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @36995: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @37165: USB analyzer detected *ACK*
-=================================================
-
-
-USBTB @37185: Host and device reported successful read
-USBTB @37195: TB->Host reading with 2 fake corrupt errors
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @37225: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
-Bitstream:       0000001100001111010000001000001
-Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @37555: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @37585: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJJKKKKJJKKKJKKKJKJJJJKKKKKKJKK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000010111010110011000111011111001
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h9ae8000000000000, crc5:'hxx, crc16:'h9f71}
-USBTB.device_inst.analyzer.usb_terminal_inst @38555: USB analyzer detected *DATA0* with PAYLOAD=9ae8000000000000 CRC16=9f71 (correct 9f71)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @38805: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @38975: USB analyzer detected *ACK*
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @39015: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKKJJJKKJJKJKJKJKKJJJJK00J
-Bitstream:       0000001100101101010000000101110
-Packet: '{sync:'h1, pid:'h9, pid_n:'h6, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @39345: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @39435: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 40235s failed at 40395s
+USBTB.device_inst.PROTECTED @28965: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 29765s failed at 29925s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 40395
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 7660 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJJJKJJJKKKKJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000000000011001101110
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h7660}
-USBTB.device_inst.analyzer.usb_terminal_inst @40405: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=7660 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 29925
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 7660 (correct f4bf)
+USBTB.device_inst.PROTECTED @29935: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=7660 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @40435: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @40605: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @29975: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @30145: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @40725: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 41525s failed at 41685s
+USBTB.device_inst.PROTECTED @30285: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 31085s failed at 31245s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 41685
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 b035 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJJKKKJKJKJKKKJJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001010110000001101
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hb035}
-USBTB.device_inst.analyzer.usb_terminal_inst @41695: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=b035 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 31245
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 b035 (correct f4bf)
+USBTB.device_inst.PROTECTED @31255: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=b035 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @41725: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @41895: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @31295: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @31465: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @42285: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @43265: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @31565: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @32545: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @43295: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @43465: USB analyzer detected *ACK*
+USBTB.device_inst.PROTECTED @32585: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @32755: USB analyzer detected *ACK*
 =================================================
 
 
-USBTB @43485: Host and device reported successful read
-USBTB @43495: TB->Host reading with 1 fake corrupt errors
+USBTB @32785: Host and device reported successful read
+USBTB @32795: TB->Host reading with 6 fake corrupt errors
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @43525: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
-Bitstream:       0000001100001111010000001000001
-Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @43855: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+USBTB.device_inst.PROTECTED @32815: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @33145: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @43885: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKJKKJKJJKKKKJKJKKJKKKKJJKKKJKKK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000011001000101110000100111010110011
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h1d13000000000000, crc5:'hxx, crc16:'hcd72}
-USBTB.device_inst.analyzer.usb_terminal_inst @44855: USB analyzer detected *DATA0* with PAYLOAD=1d13000000000000 CRC16=cd72 (correct cd72)
+USBTB.device_inst.PROTECTED @33175: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @34145: USB analyzer detected *DATA0* with PAYLOAD=9059000000000000 CRC16=c885 (correct c885)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @45085: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @45255: USB analyzer detected *ACK*
+USBTB.device_inst.PROTECTED @34425: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @34595: USB analyzer detected *ACK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @45295: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKKJJJKKJJKJKJKJKKJJJJK00J
-Bitstream:       0000001100101101010000000101110
-Packet: '{sync:'h1, pid:'h9, pid_n:'h6, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @45625: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+USBTB.device_inst.PROTECTED @34635: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @34965: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @45955: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 46755s failed at 46915s
+USBTB.device_inst.PROTECTED @35375: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 36175s failed at 36335s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 46915
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 8aa1 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJKJKKJJKKJJKJKK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001000010101010001
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h8aa1}
-USBTB.device_inst.analyzer.usb_terminal_inst @46925: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=8aa1 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 36335
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 8aa1 (correct f4bf)
+USBTB.device_inst.PROTECTED @36345: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=8aa1 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @46955: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @47125: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @36385: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @36555: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @47205: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @48185: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @48215: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @48385: USB analyzer detected *ACK*
-=================================================
-
-
-USBTB @48405: Host and device reported successful read
-USBTB @48415: TB->Host reading with 6 fake corrupt errors
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @48445: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
-Bitstream:       0000001100001111010000001000001
-Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @48775: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @48805: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJKKJKJJKKJJJJJJKJKKKJJKKKKJKKJK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000010010001010111110001101011100100
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'hfa89000000000000, crc5:'hxx, crc16:'h2758}
-USBTB.device_inst.analyzer.usb_terminal_inst @49775: USB analyzer detected *DATA0* with PAYLOAD=fa89000000000000 CRC16=2758 (correct 2758)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @49925: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @50095: USB analyzer detected *ACK*
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @50135: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKKJJJKKJJKJKJKJKKJJJJK00J
-Bitstream:       0000001100101101010000000101110
-Packet: '{sync:'h1, pid:'h9, pid_n:'h6, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @50465: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @50945: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 51745s failed at 51905s
+USBTB.device_inst.PROTECTED @36805: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 37605s failed at 37765s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 51905
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 446b (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKJJKKKJKJJKJKKJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001101011000100010
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h446b}
-USBTB.device_inst.analyzer.usb_terminal_inst @51915: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=446b (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 37765
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 446b (correct f4bf)
+USBTB.device_inst.PROTECTED @37775: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=446b (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @51945: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @52115: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @37815: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @37985: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @52195: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 52995s failed at 53165s
+USBTB.device_inst.PROTECTED @38075: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 38875s failed at 39045s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 53165
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 b3fe (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJJJJJJJKKKKJKKKJJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000000111111 111001101
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hb3fe}
-USBTB.device_inst.analyzer.usb_terminal_inst @53175: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=b3fe (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 39045
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 b3fe (correct f4bf)
+USBTB.device_inst.PROTECTED @39055: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=b3fe (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @53205: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @53375: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @39095: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @39265: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @53475: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 54275s failed at 54435s
+USBTB.device_inst.PROTECTED @39385: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 40185s failed at 40345s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 54435
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 dac9 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJKKJKKKJJKKKJJJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001001001101011011
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hdac9}
-USBTB.device_inst.analyzer.usb_terminal_inst @54445: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=dac9 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 40345
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 dac9 (correct f4bf)
+USBTB.device_inst.PROTECTED @40355: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=dac9 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @54475: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @54645: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @40395: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @40565: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @55155: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 55955s failed at 56115s
+USBTB.device_inst.PROTECTED @40955: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 41755s failed at 41915s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 56115
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 4d5d (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJJJJKKJJKKKJKKJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001011101010110010
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h4d5d}
-USBTB.device_inst.analyzer.usb_terminal_inst @56125: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=4d5d (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 41915
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 4d5d (correct f4bf)
+USBTB.device_inst.PROTECTED @41925: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=4d5d (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @56155: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @56325: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @41965: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @42135: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @56635: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 57435s failed at 57595s
+USBTB.device_inst.PROTECTED @42365: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 43165s failed at 43325s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 57595
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 0e15 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJJKKJKJKKKKJKJK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001010100001110000
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'he15}
-USBTB.device_inst.analyzer.usb_terminal_inst @57605: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=0e15 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 43325
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 0e15 (correct f4bf)
+USBTB.device_inst.PROTECTED @43335: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=0e15 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @57635: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @57805: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @43375: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @43545: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @57965: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 58765s failed at 58925s
+USBTB.device_inst.PROTECTED @43875: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @44855: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @44895: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @45065: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @45095: Host and device reported successful read
+USBTB @45105: TB->Host reading with 3 fake corrupt errors
+=================================================
+USBTB.device_inst.PROTECTED @45125: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @45455: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @45485: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @46455: USB analyzer detected *DATA0* with PAYLOAD=cd52000000000000 CRC16=0143 (correct 0143)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @46535: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @46705: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @46745: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @47075: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @47225: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 48025s failed at 48185s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 58925
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 8b45 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJJKJKKJJJKKJKJJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001010001011010001
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h8b45}
-USBTB.device_inst.analyzer.usb_terminal_inst @58935: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=8b45 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 48185
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 8b45 (correct f4bf)
+USBTB.device_inst.PROTECTED @48195: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=8b45 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @58965: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @59135: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @48235: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @48405: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @59405: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @60385: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @60415: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @60585: USB analyzer detected *ACK*
-=================================================
-
-
-USBTB @60605: Host and device reported successful read
-USBTB @60615: TB->Host reading with 5 fake corrupt errors
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @60645: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
-Bitstream:       0000001100001111010000001000001
-Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @60975: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @61005: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJJKJJJJJKJJKJKJJKKJJJJJJJKKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000100111100100001010111111 1101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h84f2000000000000, crc5:'hxx, crc16:'hf7fa}
-USBTB.device_inst.analyzer.usb_terminal_inst @61985: USB analyzer detected *DATA0* with PAYLOAD=84f2000000000000 CRC16=f7fa (correct f7fa)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @62395: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @62565: USB analyzer detected *ACK*
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @62605: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKKJJJKKJJKJKJKJKKJJJJK00J
-Bitstream:       0000001100101101010000000101110
-Packet: '{sync:'h1, pid:'h9, pid_n:'h6, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @62935: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @62965: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 63765s failed at 63925s
+USBTB.device_inst.PROTECTED @48885: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 49685s failed at 49845s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 63925
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 5f54 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJJKKJJJJJJKKJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000000010101011111010
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h5f54}
-USBTB.device_inst.analyzer.usb_terminal_inst @63935: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=5f54 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 49845
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 5f54 (correct f4bf)
+USBTB.device_inst.PROTECTED @49855: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=5f54 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @63965: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @64135: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @49895: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @50065: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @64275: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 65075s failed at 65245s
+USBTB.device_inst.PROTECTED @50145: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 50945s failed at 51115s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 65245
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 7ec0 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKJJJJJJJKJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000000000110111111 0
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h7ec0}
-USBTB.device_inst.analyzer.usb_terminal_inst @65255: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=7ec0 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 51115
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 7ec0 (correct f4bf)
+USBTB.device_inst.PROTECTED @51125: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=7ec0 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @65285: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @65455: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @51165: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @51335: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @65985: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 66785s failed at 66945s
+USBTB.device_inst.PROTECTED @51435: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @52415: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @52455: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @52625: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @52655: Host and device reported successful read
+USBTB @52665: TB->Host reading with 6 fake corrupt errors
+=================================================
+USBTB.device_inst.PROTECTED @52685: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @53015: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @53045: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @54015: USB analyzer detected *DATA0* with PAYLOAD=9ae8000000000000 CRC16=9f71 (correct 9f71)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @54525: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @54695: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @54735: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @55065: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @55375: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 56175s failed at 56335s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 66945
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 3444 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJKJJKJKKJJJKJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000000010001000101100
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h3444}
-USBTB.device_inst.analyzer.usb_terminal_inst @66955: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=3444 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 56335
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 3444 (correct f4bf)
+USBTB.device_inst.PROTECTED @56345: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=3444 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @66985: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @67155: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @56385: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @56555: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @67405: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 68205s failed at 68365s
+USBTB.device_inst.PROTECTED @56715: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 57515s failed at 57675s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 68365
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 d64a (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJJKKJKKJKKKJJKKK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000000101001001101011
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hd64a}
-USBTB.device_inst.analyzer.usb_terminal_inst @68375: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=d64a (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 57675
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 d64a (correct f4bf)
+USBTB.device_inst.PROTECTED @57685: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=d64a (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @68405: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @68575: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @57725: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @57895: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @69095: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 69895s failed at 70055s
+USBTB.device_inst.PROTECTED @58165: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 58965s failed at 59125s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 70055
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 d98f (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKJKJJJKJJJKKK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001111000110011011
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hd98f}
-USBTB.device_inst.analyzer.usb_terminal_inst @70065: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=d98f (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 59125
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 d98f (correct f4bf)
+USBTB.device_inst.PROTECTED @59135: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=d98f (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @70095: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @70265: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @59175: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @59345: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @70735: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @71715: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @71745: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @71915: USB analyzer detected *ACK*
-=================================================
-
-
-USBTB @71935: Host and device reported successful read
-USBTB @71945: TB->Host reading with 3 fake corrupt errors
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @71975: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
-Bitstream:       0000001100001111010000001000001
-Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @72305: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @72335: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKJJJKKKJJKJJKJKKJJKJJJKKJKKJKJK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000011011011010010001010011010010000
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h12db000000000000, crc5:'hxx, crc16:'h965}
-USBTB.device_inst.analyzer.usb_terminal_inst @73305: USB analyzer detected *DATA0* with PAYLOAD=12db000000000000 CRC16=0965 (correct 0965)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @73825: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @73995: USB analyzer detected *ACK*
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @74035: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKKJJJKKJJKJKJKJKKJJJJK00J
-Bitstream:       0000001100101101010000000101110
-Packet: '{sync:'h1, pid:'h9, pid_n:'h6, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @74365: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @74495: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 75295s failed at 75455s
+USBTB.device_inst.PROTECTED @59755: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 60555s failed at 60715s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 75455
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 ca65 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJJKJJJKJJKKJKKK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001010011001010011
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hca65}
-USBTB.device_inst.analyzer.usb_terminal_inst @75465: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=ca65 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 60715
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 ca65 (correct f4bf)
+USBTB.device_inst.PROTECTED @60725: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=ca65 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @75495: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @75665: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @60765: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @60935: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @75985: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 76785s failed at 76945s
+USBTB.device_inst.PROTECTED @60965: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 61765s failed at 61925s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 76945
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 e859 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJKKKJJKJKJJKKKK00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001001101000010111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'he859}
-USBTB.device_inst.analyzer.usb_terminal_inst @76955: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=e859 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 61925
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 e859 (correct f4bf)
+USBTB.device_inst.PROTECTED @61935: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=e859 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @76985: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @77155: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @61975: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @62145: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @77255: USB analyzer is interpreting a new packet
-"USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: started at 78055s failed at 78215s
+USBTB.device_inst.PROTECTED @62285: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 63085s failed at 63245s
 	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
-Error: "USBDevice.sv", 1515: USBTB.device_inst.analyzer.chk_crc16: at time 78215
-!!! USBTB.device_inst.analyzer.chk_crc16: USB analyzer detected data packet with invalid CRC16 82b9 (correct f4bf)
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKJKKKKJJKKJKJKJJ00J
-Bitstream:       00000011100001100000000000000000000000000000000000000000000000000000000000000001001110101000001
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'h82b9}
-USBTB.device_inst.analyzer.usb_terminal_inst @78225: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=82b9 (correct f4bf)
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 63245
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 82b9 (correct f4bf)
+USBTB.device_inst.PROTECTED @63255: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=82b9 (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @78255: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKKKJJK00J
-Bitstream:       000000101011010
-Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @78425: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @63295: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @63465: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @78505: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @79485: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @63995: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @64975: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @79515: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKJJKJJKKK00J
-Bitstream:       000000101001011
-Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @79685: USB analyzer detected *ACK*
+USBTB.device_inst.PROTECTED @65015: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @65185: USB analyzer detected *ACK*
 =================================================
 
 
-USBTB @79705: Host and device reported successful read
+USBTB @65215: Host and device reported successful read
+USBTB @65225: TB->Host reading with 1 fake corrupt errors
+=================================================
+USBTB.device_inst.PROTECTED @65245: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @65575: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @65605: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @66575: USB analyzer detected *DATA0* with PAYLOAD=1d13000000000000 CRC16=cd72 (correct cd72)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @66825: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @66995: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @67035: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @67365: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @67885: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 68685s failed at 68845s
+	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 68845
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 83ae (correct f4bf)
+USBTB.device_inst.PROTECTED @68855: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=83ae (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @68895: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @69065: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @69535: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @70515: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @70555: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @70725: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @70755: Host and device reported successful read
+USBTB @70765: TB->Host reading with 5 fake corrupt errors
+=================================================
+USBTB.device_inst.PROTECTED @70785: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @71115: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @71145: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @72115: USB analyzer detected *DATA0* with PAYLOAD=fa89000000000000 CRC16=2758 (correct 2758)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @72635: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @72805: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @72845: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @73175: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @73305: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 74105s failed at 74265s
+	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 74265
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 2c62 (correct f4bf)
+USBTB.device_inst.PROTECTED @74275: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=2c62 (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @74315: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @74485: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @74805: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 75605s failed at 75765s
+	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 75765
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 e487 (correct f4bf)
+USBTB.device_inst.PROTECTED @75775: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=e487 (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @75815: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @75985: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @76085: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 76885s failed at 77045s
+	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 77045
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 2742 (correct f4bf)
+USBTB.device_inst.PROTECTED @77055: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=2742 (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @77095: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @77265: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @77345: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 78145s failed at 78305s
+	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 78305
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 3d40 (correct f4bf)
+USBTB.device_inst.PROTECTED @78315: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=3d40 (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @78355: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @78525: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @78905: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 79705s failed at 79875s
+	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 79875
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 7f4f (correct f4bf)
+USBTB.device_inst.PROTECTED @79885: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=7f4f (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @79925: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @80095: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @80515: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @81495: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @81535: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @81705: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @81735: Host and device reported successful read
+USBTB @81745: TB->Host reading with 3 fake corrupt errors
+=================================================
+USBTB.device_inst.PROTECTED @81765: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @82095: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @82125: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @83105: USB analyzer detected *DATA0* with PAYLOAD=84f2000000000000 CRC16=f7fa (correct f7fa)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @83605: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @83775: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @83815: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @84145: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @84225: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 85025s failed at 85185s
+	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 85185
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 8723 (correct f4bf)
+USBTB.device_inst.PROTECTED @85195: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=8723 (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @85235: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @85405: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @85795: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 86595s failed at 86755s
+	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 86755
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 0f64 (correct f4bf)
+USBTB.device_inst.PROTECTED @86765: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=0f64 (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @86805: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @86975: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @87055: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 87855s failed at 88015s
+	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 88015
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 771c (correct f4bf)
+USBTB.device_inst.PROTECTED @88025: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=771c (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @88065: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @88235: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @88705: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @89685: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @89725: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @89895: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @89925: Host and device reported successful read
+USBTB @89935: TB->Host reading with 3 fake corrupt errors
+=================================================
+USBTB.device_inst.PROTECTED @89955: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @90285: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @90315: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @91285: USB analyzer detected *DATA0* with PAYLOAD=12db000000000000 CRC16=0965 (correct 0965)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @91725: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @91895: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @91935: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @92265: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @92765: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 93565s failed at 93725s
+	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 93725
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 d620 (correct f4bf)
+USBTB.device_inst.PROTECTED @93735: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=d620 (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @93775: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @93945: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @94135: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 94935s failed at 95095s
+	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 95095
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 cbea (correct f4bf)
+USBTB.device_inst.PROTECTED @95105: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=cbea (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @95145: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @95315: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @95415: USB analyzer is interpreting a new packet
+"USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: started at 96215s failed at 96375s
+	Offending '(debug_pkt.crc16 == fn_crc16_nr(debug_pkt))'
+Error: "USBDevice.svp", 882: USBTB.device_inst.PROTECTED.chk_crc16: at time 96375
+!!! USBTB.device_inst.PROTECTED.chk_crc16: USB analyzer detected data packet with invalid CRC16 a179 (correct f4bf)
+USBTB.device_inst.PROTECTED @96385: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=a179 (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @96425: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @96595: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @96655: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @97635: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @97675: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @97845: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @97875: Host and device reported successful read
 
 -----------------------------------------------------------
  <Finished> Corrupt Read/Write Test
 -----------------------------------------------------------
 
-$finish called from file "USBTB.sv", line 599.
-$finish at simulation time                79705
-           V C S   S i m u l a t i o n   R e p o r t 
-Time: 79705
-CPU Time:      0.390 seconds;       Data structure size:   2.1Mb
-Mon Nov 13 10:29:56 2017
+$finish called from file "USBTB.sv", line 610.
+$finish at simulation time                97875
+           V C S   S i m u l a t i o n   R e p o r t
+Time: 97875
+CPU Time:      0.300 seconds;       Data structure size:   1.1Mb
+Thu Nov 18 14:25:50 2021

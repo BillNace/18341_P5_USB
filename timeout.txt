@@ -1,0 +1,651 @@
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version J-2014.12-SP3-1_Full64; Runtime version J-2014.12-SP3-1_Full64;  Nov 18 14:27 2021
+
+-----------------------------------------------------------
+ <Started> Timeout Read/Write Test
+-----------------------------------------------------------
+
+USBTB @15: TB->Host reading with 6 fake timeout errors
+=================================================
+USBTB.device_inst.PROTECTED @35: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @365: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @395: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @1365: USB analyzer detected *DATA0* with PAYLOAD=e467000000000000 CRC16=8f95 (correct 8f95)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @1715: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @1885: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @1925: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @2255: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @4835: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @5005: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @7585: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @7755: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @10335: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @10505: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @13085: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @13255: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @15835: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @16005: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @18585: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @18755: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @18985: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @19965: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @20005: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @20175: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @20205: Host and device reported successful read
+USBTB @20215: TB->Host reading with 4 fake timeout errors
+=================================================
+USBTB.device_inst.PROTECTED @20235: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @20565: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @20595: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @21565: USB analyzer detected *DATA0* with PAYLOAD=4151000000000000 CRC16=5442 (correct 5442)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @21695: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @21865: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @21905: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @22235: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @24815: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @24985: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @27565: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @27735: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @30315: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @30485: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @33065: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @33235: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @33625: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @34605: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @34645: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @34815: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @34845: Host and device reported successful read
+USBTB @34855: TB->Host reading with 5 fake timeout errors
+=================================================
+USBTB.device_inst.PROTECTED @34875: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @35205: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @35235: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @36205: USB analyzer detected *DATA0* with PAYLOAD=71f7000000000000 CRC16=e039 (correct e039)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @36725: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @36895: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @36935: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @37265: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @39845: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @40015: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @42595: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @42765: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @45345: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @45515: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @48095: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @48265: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @50845: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @51015: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @51065: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @52045: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @52085: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @52255: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @52285: Host and device reported successful read
+USBTB @52295: TB->Host reading with 6 fake timeout errors
+=================================================
+USBTB.device_inst.PROTECTED @52315: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @52645: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @52675: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @53645: USB analyzer detected *DATA0* with PAYLOAD=9059000000000000 CRC16=c885 (correct c885)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @54135: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @54305: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @54345: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @54675: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @57255: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @57425: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @60005: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @60175: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @62755: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @62925: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @65505: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @65675: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @68255: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @68425: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @71005: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @71175: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @71625: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @72605: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @72645: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @72815: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @72845: Host and device reported successful read
+USBTB @72855: TB->Host reading with 3 fake timeout errors
+=================================================
+USBTB.device_inst.PROTECTED @72875: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @73205: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @73235: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @74205: USB analyzer detected *DATA0* with PAYLOAD=cd52000000000000 CRC16=0143 (correct 0143)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @74355: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @74525: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @74565: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @74895: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @77475: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @77645: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @80225: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @80395: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @82975: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @83145: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @83255: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @84235: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @84275: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @84445: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @84475: Host and device reported successful read
+USBTB @84485: TB->Host reading with 6 fake timeout errors
+=================================================
+USBTB.device_inst.PROTECTED @84505: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @84835: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @84865: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @85835: USB analyzer detected *DATA0* with PAYLOAD=9ae8000000000000 CRC16=9f71 (correct 9f71)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @86095: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @86265: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @86305: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @86635: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @89215: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @89385: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @91965: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @92135: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @94715: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @94885: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @97465: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @97635: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @100215: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @100385: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @102965: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @103135: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @103575: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @104555: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @104595: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @104765: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @104795: Host and device reported successful read
+USBTB @104805: TB->Host reading with 1 fake timeout errors
+=================================================
+USBTB.device_inst.PROTECTED @104825: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @105155: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @105185: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @106155: USB analyzer detected *DATA0* with PAYLOAD=1d13000000000000 CRC16=cd72 (correct cd72)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @106235: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @106405: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @106445: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @106775: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @109355: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @109525: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @109725: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @110705: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @110745: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @110915: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @110945: Host and device reported successful read
+USBTB @110955: TB->Host reading with 5 fake timeout errors
+=================================================
+USBTB.device_inst.PROTECTED @110975: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @111305: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @111335: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @112305: USB analyzer detected *DATA0* with PAYLOAD=fa89000000000000 CRC16=2758 (correct 2758)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @112445: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @112615: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @112655: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @112985: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @115565: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @115735: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @118315: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @118485: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @121065: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @121235: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @123815: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @123985: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @126565: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @126735: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @127125: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @128105: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @128145: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @128315: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @128345: Host and device reported successful read
+USBTB @128355: TB->Host reading with 3 fake timeout errors
+=================================================
+USBTB.device_inst.PROTECTED @128375: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @128705: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @128735: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @129715: USB analyzer detected *DATA0* with PAYLOAD=84f2000000000000 CRC16=f7fa (correct f7fa)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @130215: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @130385: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @130425: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @130755: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @133335: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @133505: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @136085: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @136255: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @138835: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @139005: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @139355: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @140335: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @140375: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @140545: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @140575: Host and device reported successful read
+USBTB @140585: TB->Host reading with 3 fake timeout errors
+=================================================
+USBTB.device_inst.PROTECTED @140605: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @140935: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @140965: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @141935: USB analyzer detected *DATA0* with PAYLOAD=12db000000000000 CRC16=0965 (correct 0965)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @142155: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @142325: USB analyzer detected *ACK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @142365: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @142695: USB analyzer detected *IN* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @145275: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @145445: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @148025: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @148195: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @150775: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @150945: USB analyzer detected *NAK*
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @151085: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @152065: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+=================================================
+
+
+=================================================
+USBTB.device_inst.PROTECTED @152105: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @152275: USB analyzer detected *ACK*
+=================================================
+
+
+USBTB @152305: Host and device reported successful read
+
+-----------------------------------------------------------
+ <Finished> Timeout Read/Write Test
+-----------------------------------------------------------
+
+$finish called from file "USBTB.sv", line 610.
+$finish at simulation time               152305
+           V C S   S i m u l a t i o n   R e p o r t
+Time: 152305
+CPU Time:      0.300 seconds;       Data structure size:   2.4Mb
+Thu Nov 18 14:27:58 2021
