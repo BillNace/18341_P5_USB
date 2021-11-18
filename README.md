@@ -167,7 +167,7 @@ USB host would do an **OUT** transaction to send a memory address -- again, not
 the USB ADDR -- to the device (it would be in the **DATA0** packet).  It then
 would do another OUT transaction to send the data to be written in the thumb
 drive's memory.  In all cases, the **DATA0** packet will send 8 bytes.  When
-sending the memory address, the address is in the first two bytes of the
+sending the memory address, the address (mempage) is in the first two bytes of the
 **DATA0** packet's DATA field with the remaining 6 bytes being zero.  Remember,
 the DATA field is actually transmitted LSB first.
 
