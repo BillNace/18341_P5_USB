@@ -47,7 +47,7 @@ Classroom repository is a team repository.  The first one to follow the invitati
 link should make a team repo.  Name your team repo with your team number (from the
 team handout) and both Andrew IDs.  The second partner needs to make sure to
 join the correct
-team.  
+team.
 
 Then, communicate with your partner about workflow.  How do you intend to
 collaborate?  Will you branch whenever you are doing work on a feature?  Will
@@ -176,11 +176,11 @@ errors and no timeouts due to someone missing a packet.  Below are two modified
 process flow diagrams for IN transactions where errors occur.  On the left,
 corrupted data is sent by the device — it may be caused by noise on the line,
 etc.  The host responds with a **NAK** and the device tries again, up to
-8 times.  Hopefully, that data finally gets through and the host sends an ACK.
-However, if it tries and fails 8 times, the whole transaction is cancelled.  On
+7 times.  Hopefully, that data finally gets through and the host sends an ACK.
+However, if it tries and fails 7 times, the whole transaction is cancelled.  On
 the right, nothing is received.  After 255 clock periods, the host times out and
 sends a **NAK**.  At this point, the device should send another **DATA0**
-packet.  If the timeout occurs 8 times, then the whole transaction is cancelled.
+packet.  If the timeout occurs 7 times, then the whole transaction is cancelled. The errors of different types do not add up, so if you have 4 timeouts, then 3 corrupt packets, and then the correct packet, the transaction should still proceed.
 
 ![BAD IN Transactions](./images/transaction_bad_in.png)
 
@@ -345,7 +345,7 @@ Your testbench, pretending to be an OS, will call some tasks, which reside in
 your **USBHost**, to set up memory accesses.  So that the TA testbench can
 initiate reads and writes using these same tasks, you must stick to these task
 headers.  The status returned (success) indicates if the transaction completed
-successfully, as opposed to there being 8x bad packets or an 8x timeout.  We’ll
+successfully, as opposed to there being 7x bad packets or a 7x timeout.  We’ll
 provide several encrypted thumb drives for you corresponding to various levels
 of the protocol.  They will print information telling you what they received
 and/or what they're sending back to you.  We will provide some with typical
@@ -482,7 +482,7 @@ similar to Router lab.
 ////                 device will send 1 to 3 bogus NAKs during each OUT
 ////                 transaction; YOU WILL SEE AN ASSERTION FAILURE
 ////     - +ABORT:   TB directs host to write random data twice, but the device
-////                 will error 8 times and throw out both transactions; YOU
+////                 will error 7 times and throw out both transactions; YOU
 ////                 WILL SEE AN ASSERTION FAILURE
 ////
 ////   !NOTE AGAIN!: concurrent assertions are statements of truth, so YOU WILL
@@ -543,7 +543,7 @@ parts include:
   should have **SYNC** and **EOP** too.  It should drive the wires in the
   interface in USBHost.sv.  We’ll receive it and check the packet with the bus
   analyzer.  Your code should be built as a datapath using well-known sequential
-  and combinational components.  In particular, you may not just have a huge 
+  and combinational components.  In particular, you may not just have a huge
   shift register with a pre-computed set of bits that get sent on the serial
   interface.
 

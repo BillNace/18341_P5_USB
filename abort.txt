@@ -1,10 +1,6 @@
-
-Note-[RT_BS] Larger stack needed
-  Note: Bumping stack limit from 8192 to 9216 Kbytes.
-
-Chronologic VCS simulator copyright 1991-2015
+Chronologic VCS simulator copyright 1991-2014
 Contains Synopsys proprietary information.
-Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Nov 13 10:28 2017
+Compiler version J-2014.12-SP3-1_Full64; Runtime version J-2014.12-SP3-1_Full64;  Nov 10 01:41 2021
 
 -----------------------------------------------------------
  <Started> Transaction Abort Test
@@ -13,422 +9,323 @@ Compiler version K-2015.09_Full64; Runtime version K-2015.09_Full64;  Nov 13 10:
 
 USBTB @25: TB->Host attempting to abort transaction in ADDR
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @55: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @45: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
 Bitstream:       0000001100001111010000001000001
 Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @385: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+USBTB.device_inst.PROTECTED @375: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @415: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @405: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @1395: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @1385: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @1745: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @1735: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @1915: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @1905: USB analyzer detected *NAK*
 =================================================
 
 
-"USBDevice.sv", 1569: USBTB.device_inst.analyzer.chk_protocol: started at 395s failed at 1925s
+"USBDevice.svp", 936: USBTB.device_inst.PROTECTED.chk_protocol: started at 385s failed at 1915s
 	Offending '($rose(done_receiving) && (debug_pkt.pid == PID_ACK))'
-Error: "USBDevice.sv", 1569: USBTB.device_inst.analyzer.chk_protocol: at time 1925
-!!! USBTB.device_inst.analyzer.chk_protocol: USB analyzer detected invalid sequence of packets
+Error: "USBDevice.svp", 936: USBTB.device_inst.PROTECTED.chk_protocol: at time 1915
+!!! USBTB.device_inst.PROTECTED.chk_protocol: USB analyzer detected invalid sequence of packets
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @1945: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @1945: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @2925: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @2925: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @3155: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @3155: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @3325: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @3325: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @3355: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @3365: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @4335: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @4345: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @4465: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @4475: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @4635: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @4645: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @4665: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @4685: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @5645: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @5665: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @6035: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @6055: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @6205: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @6225: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @6235: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @6265: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @7215: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @7245: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @7735: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @7765: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @7905: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @7935: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @7935: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @7975: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @8915: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @8955: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @8965: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @9005: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @9135: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @9175: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @9165: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @9215: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @10145: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @10195: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @10635: USB analyzer is interpreting a new packet
-USBTB @10805: Device successfully aborted the transaction
+USBTB.device_inst.PROTECTED @10685: USB analyzer is interpreting a new packet
+USBTB @10855: Device successfully aborted the transaction
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @10805: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @10855: USB analyzer detected *NAK*
 =================================================
 
 
+USBTB @10895: Host and device aborted the transaction in ADDR
+USBTB @10915: TB->Host attempting to abort transaction in DATA
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @10835: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @11815: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @14415: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJKKJJJJK00J
-Bitstream:       0000001100001111010000000101110
-Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @14745: USB analyzer detected *OUT* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @14775: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @15755: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @18345: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @19325: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @21915: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @22895: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @25485: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @26465: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @29055: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @30035: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @32625: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @33605: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @36195: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @37175: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @39765: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @40745: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-USBTB @43325: Host and device aborted the transaction in ADDR
-USBTB @43345: TB->Host attempting to abort transaction in DATA
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @43375: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @10935: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJJKJKJKK00J
 Bitstream:       0000001100001111010000001000001
 Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h4, payload:'hxxxxxxxxxxxxxxxx, crc5:'h10, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @43705: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
+USBTB.device_inst.PROTECTED @11265: USB analyzer detected *OUT* with ADDR=5 ENDP=4 CRC5=10 (correct 10)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @43735: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @11295: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @44715: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @12275: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @45165: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @12725: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKJJKKK00J
 Bitstream:       000000101001011
 Packet: '{sync:'h1, pid:'h2, pid_n:'hd, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @45335: USB analyzer detected *ACK*
+USBTB.device_inst.PROTECTED @12895: USB analyzer detected *ACK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @45375: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @12935: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKJKJKKKKKJJKJKJKJKKJJJJK00J
 Bitstream:       0000001100001111010000000101110
 Packet: '{sync:'h1, pid:'h1, pid_n:'he, addr:'h5, endp:'h8, payload:'hxxxxxxxxxxxxxxxx, crc5:'he, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @45705: USB analyzer detected *OUT* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
+USBTB.device_inst.PROTECTED @13265: USB analyzer detected *OUT* with ADDR=5 ENDP=8 CRC5=0e (correct 0e)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @45735: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @13295: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @46715: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @14275: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @46865: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @14425: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @47035: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @14595: USB analyzer detected *NAK*
 =================================================
 
 
-"USBDevice.sv", 1569: USBTB.device_inst.analyzer.chk_protocol: started at 43715s failed at 47045s
+"USBDevice.svp", 936: USBTB.device_inst.PROTECTED.chk_protocol: started at 11275s failed at 14605s
 	Offending '($rose(done_receiving) && (debug_pkt.pid == PID_ACK))'
-Error: "USBDevice.sv", 1569: USBTB.device_inst.analyzer.chk_protocol: at time 47045
-!!! USBTB.device_inst.analyzer.chk_protocol: USB analyzer detected invalid sequence of packets
+Error: "USBDevice.svp", 936: USBTB.device_inst.PROTECTED.chk_protocol: at time 14605
+!!! USBTB.device_inst.PROTECTED.chk_protocol: USB analyzer detected invalid sequence of packets
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @47065: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @14635: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @48045: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @15615: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @48155: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @15725: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @48325: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @15895: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @48355: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @15935: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @49335: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @16915: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @49595: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @17175: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @49765: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @17345: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @49795: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @17385: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @50775: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @18365: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @51215: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @18805: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @51385: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @18975: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @51415: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @19015: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @52395: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @19995: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @52475: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @20075: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @52645: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @20245: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @52675: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @20285: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @53655: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @21265: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @53855: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @21465: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @54025: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @21635: USB analyzer detected *NAK*
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @54055: USB analyzer is interpreting a new packet
+USBTB.device_inst.PROTECTED @21675: USB analyzer is interpreting a new packet
 Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
 Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
 Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @55035: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
+USBTB.device_inst.PROTECTED @22655: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
 =================================================
 
 
 =================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @55175: USB analyzer is interpreting a new packet
-USBTB @55345: Device successfully aborted the transaction
+USBTB.device_inst.PROTECTED @22795: USB analyzer is interpreting a new packet
+USBTB @22965: Device successfully aborted the transaction
 Raw Bus Traffic: JKJKJKKJJKKKJJK00J
 Bitstream:       000000101011010
 Packet: '{sync:'h1, pid:'ha, pid_n:'h5, addr:'hxx, endp:'hx, payload:'hxxxxxxxxxxxxxxxx, crc5:'hxx, crc16:'hxxxx}
-USBTB.device_inst.analyzer.usb_terminal_inst @55345: USB analyzer detected *NAK*
+USBTB.device_inst.PROTECTED @22965: USB analyzer detected *NAK*
 =================================================
 
 
-=================================================
-USBTB.device_inst.analyzer.usb_terminal_inst @55375: USB analyzer is interpreting a new packet
-Raw Bus Traffic: JKJKJKKKKJKJKKKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKKKKKKKJKKJKKJJJJJ00J
-Bitstream:       0000001110000110000000000000000000000000000000000000000000000000000000000000000111111 0100101111
-Packet: '{sync:'h1, pid:'h3, pid_n:'hc, addr:'hxx, endp:'hx, payload:'h0, crc5:'hxx, crc16:'hf4bf}
-USBTB.device_inst.analyzer.usb_terminal_inst @56355: USB analyzer detected *DATA0* with PAYLOAD=0000000000000000 CRC16=f4bf (correct f4bf)
-=================================================
-
-
-USBTB @58935: Host and device aborted the transaction in DATA
+USBTB @23005: Host and device aborted the transaction in DATA
 
 -----------------------------------------------------------
  <Finished> Transaction Abort Test
 -----------------------------------------------------------
 
-$finish called from file "USBTB.sv", line 599.
-$finish at simulation time                58935
+$finish called from file "USBTB.sv", line 610.
+$finish at simulation time                23005
            V C S   S i m u l a t i o n   R e p o r t
-Time: 58935
-CPU Time:      0.350 seconds;       Data structure size:   2.1Mb
-Mon Nov 13 10:28:38 2017
+Time: 23005
+CPU Time:      0.220 seconds;       Data structure size:   1.1Mb
+Wed Nov 10 01:41:12 2021
