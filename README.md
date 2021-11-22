@@ -124,7 +124,7 @@ into the **NRZI** module to create lots of edges on the signal wires.
 **Bus Turnaround Time** (i.e. short wait between packets) is **X**, where **X**
 means single-ended zero (**SE0**).  We haven't talked about this in lecture, but
 turnaround time is a very important feature of shared-bus topologies.
-Basically, it's a short amount of time (e.g. one cycle) between transactions on
+Basically, it's a short amount of time (e.g. one cycle) between different packets on
 the bus during which all devices should let go of the wires and allow them to
 return to their electrically neutral state.  Ask us why this is necessary!
 
@@ -353,7 +353,7 @@ errors.
 
 ```systemverilog
 task readData
-// Host sends mempage to thumb drive using a READ (OUT->DATA0->OUT->DATA0)
+// Host sends mempage to thumb drive using a READ (OUT->DATA0->IN->DATA0)
 // transaction, and then receives data from it. This task should return both the
 // data and the transaction status, successful or unsuccessful, to the caller.
 ( input logic [15:0] mempage, // Page to write
@@ -366,7 +366,7 @@ task readData
 endtask : readData
 
 task writeData
-// Host sends mempage to thumb drive using a WRITE (OUT->DATA0->IN->DATA0)
+// Host sends mempage to thumb drive using a WRITE (OUT->DATA0->OUT->DATA0)
 // transaction, and then sends data to it. This task should return the
 // transaction status, successful or unsuccessful, to the caller.
 ( input logic [15:0] mempage, // Page to write
