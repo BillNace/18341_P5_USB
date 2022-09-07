@@ -1,6 +1,6 @@
 # USB Protocol Engine Project
 
-18-341: Fall Semester of 2021
+18-341: Fall Semester of 2022
 
 ## Objective and Overview
 
@@ -18,10 +18,10 @@ This is an **team** project.  See details in two sections from here.
 
 Project value | 100 points
 --- | ---
-Project start | 25 October 2021
-Part 1 due |  8 November 2021 at 1:30pm
-Project due | 15 November 2021 at 1:30pm
-Drop dead date | 16 November 2021 at 1:30pm
+Project start | 31 October 2022
+Part 1 due |  14 November 2022 at 1:30pm
+Project due | 28 November 2022 at 1:30pm
+Drop dead date | 29 November 2022 at 1:30pm
 
 Remember!  You must have committed something by the drop-dead date!  *You must
 attempt every project*.  Not uploading anything and not showing up to explain
