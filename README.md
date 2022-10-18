@@ -539,19 +539,24 @@ parts include:
 * A prelab report and upload file.  The report will be a diagram of the FSMDs
   and their interconnections.  What are the handshake signals that are used
   between them?  What registered values are passed between them.  Upload code
-  that will send an **OUT** packet with **ADDR=5** and **ENDP=4**.  The packet
+  that will send an **OUT** packet with **ADDR=63** and **ENDP=4**.  The packet
   should have **SYNC** and **EOP** too.  It should drive the wires in the
   interface in USBHost.sv.  We’ll receive it and check the packet with the bus
   analyzer.  Your code should be built as a datapath using well-known sequential
   and combinational components.  In particular, you may not just have a huge
   shift register with a pre-computed set of bits that get sent on the serial
-  interface.
+  interface. Note the **ADDR=63** for prelab only just to make sure we are testing 
+  bit stuffing during prelab. To change the testbench to expect this value you 
+  must change **`DEVICE_ADDR** in **USB.svh**. There are comments there that tell
+  you what to do. You can check that your change worked by looking at the printout
+  for **addr** when running ./simv. Make sure to change **ADDR=5** back for final
+  to make sure you are passing the correct tests.
 
 * A final, short write-up explaining your system's organization.  Alter the
   pre-lab diagram as necessary; explain the signaling variables between the
   FSMDs.  Show the state transition diagrams for the non-testbench parts of the
   system.  Also, include a discussion of which teammate did which parts of the
-  project.
+  project. Again make sure you changed **`DEVICE_ADDR** back to 5 in **USB.svh**.
 
 * Your SystemVerilog modules "appropriately" written.  e.g., clean writing style
   and correct use of SV language semantics.  The only connections between your
