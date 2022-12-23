@@ -160,7 +160,11 @@ Your host will be requested by the testbench to do **READs** and **WRITEs** with
 the thumb drive.  To do a **READ** operation (a term we made up), the USB host
 would do an **OUT** transaction to send a memory address to the device (it would
 be in the **DATA0** packet).  Note that the memory address being sent is the
-address of memory in the thumb drive, not the USB ADDR of the thumb drive!  It
+address of memory in the thumb drive, not the USB ADDR of the thumb drive! One
+important thing to note is that the address is 16 bits and is put into the 64 bit
+data field of the DATA0 packet. The way that this is done is that 16 bits are put 
+in the 16 most significant bits of the field. For example address 16'h1234 would 
+become address 64'h1234000000000000. It
 would then do an IN transaction to get the device to send it the data read from
 the thumb drive memory.  In a WRITE operation (something else we made up), the
 USB host would do an **OUT** transaction to send a memory address -- again, not
@@ -178,7 +182,7 @@ corrupted data is sent by the device — it may be caused by noise on the line,
 etc.  The host responds with a **NAK** and the device tries again, up to
 7 times.  Hopefully, that data finally gets through and the host sends an ACK.
 However, if it tries and fails 7 times, the whole transaction is cancelled.  On
-the right, nothing is received.  After 255 clock periods, the host times out and
+the right, nothing is received.  After 255 clock periods as measured from when the first cycle at the end of the last packet sent until a couple of cycles after the NAK packet is entirely recived (with a bit of wiggle room), the host times out and
 sends a **NAK**.  At this point, the device should send another **DATA0**
 packet.  If the timeout occurs 7 times, then the whole transaction is cancelled. The errors of different types do not add up, so if you have 4 timeouts, then 3 corrupt packets, and then the correct packet, the transaction should still proceed.
 
@@ -291,22 +295,22 @@ other parts of your USB.
 
 ## The Device
 
-The USB address of the thumb drive device, used in **ADDR** fields, is **5**.
+The USB address of the thumb drive device, used in **ADDR** fields, is **63**.
 Don't confuse this with the address of the memory's data that is being read or
 written.
 
 To send the memory address to be used when reading or writing memory, send an
-**OUT** transaction to **ADDR 5**, **ENDP 4**.  The **DATA0** packet that is
+**OUT** transaction to **ADDR 63**, **ENDP 4**.  The **DATA0** packet that is
 part of the **OUT** transaction holds 6 bytes of zero and then the 2-byte memory
 address.
 
 After the memory address has been sent:
 
 * To read from that address, start an **IN** transaction, with the **IN** packet
-  sent to **ADDR 5**, **ENDP 8**.
+  sent to **ADDR 63**, **ENDP 8**.
 
 * To write to that address, start an **OUT** transaction, with the **OUT**
-  packet sent to **ADDR 5**, **ENDP 8**.
+  packet sent to **ADDR 63**, **ENDP 8**.
 
 The **DATA0** packet that is part of the **IN** or **OUT** transaction will
 contain the data to be read or written.
@@ -486,7 +490,9 @@ similar to Router lab.
 ////                 WILL SEE AN ASSERTION FAILURE
 ////
 ////   !NOTE AGAIN!: concurrent assertions are statements of truth, so YOU WILL
-////                 see some very specific failures in +CORRUPT +NAK and +ABORT
+////                 see some very specific failures in +CORRUPT +NAK and +ABORT.
+////                 these specific failures are recorded in nak.txt, abort.txt,
+////                 and corrupt.txt.
 ////
 ```
 
@@ -545,18 +551,13 @@ parts include:
   analyzer.  Your code should be built as a datapath using well-known sequential
   and combinational components.  In particular, you may not just have a huge
   shift register with a pre-computed set of bits that get sent on the serial
-  interface. Note the **ADDR=63** for prelab only just to make sure we are testing 
-  bit stuffing during prelab. To change the testbench to expect this value you 
-  must change **`DEVICE_ADDR** in **USB.svh**. There are comments there that tell
-  you what to do. You can check that your change worked by looking at the printout
-  for **addr** when running ./simv. Make sure to change **ADDR=5** back for final
-  to make sure you are passing the correct tests.
+  interface.
 
 * A final, short write-up explaining your system's organization.  Alter the
   pre-lab diagram as necessary; explain the signaling variables between the
   FSMDs.  Show the state transition diagrams for the non-testbench parts of the
   system.  Also, include a discussion of which teammate did which parts of the
-  project. Again make sure you changed **`DEVICE_ADDR** back to 5 in **USB.svh**.
+  project. 
 
 * Your SystemVerilog modules "appropriately" written.  e.g., clean writing style
   and correct use of SV language semantics.  The only connections between your
