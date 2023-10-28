@@ -1,6 +1,6 @@
 # USB Protocol Engine Project
 
-18-341: Fall Semester of 2022
+18-341: Fall Semester of 2023
 
 ## Objective and Overview
 
@@ -18,10 +18,11 @@ This is an **team** project.  See details in two sections from here.
 
 Project value | 100 points
 --- | ---
-Project start | 31 October 2022
-Part 1 due |  14 November 2022 at 1:30pm
-Project due | 28 November 2022 at 1:30pm
-Drop dead date | 29 November 2022 at 1:30pm
+Project start | 1 November 2023
+Part 1 due |  13 November 2023 at 12:30pm
+Breakups due | 14 November 2023 at 12:30pm
+Project due | 29 November 2023 at 12:30pm
+Drop dead date | 30 November 2023 at 12:30pm
 
 Remember!  You must have committed something by the drop-dead date!  *You must
 attempt every project*.  Not uploading anything and not showing up to explain
@@ -66,6 +67,24 @@ source code from other teams).  We may use automated tools to detect copying.
 Use Piazza to ask questions or come visit us during office hours (or email for
 an appointment at another time).  We want to see you succeed, but you have to
 ask for help.
+
+### Team Breakup
+
+After Part 1 is complete, either team member may choose to complete the project
+on their own, which will "break up" the team.  Notification of a breakup
+must be sent to Prof Nace via email by the breakup deadline (24-hours after
+the Part 1 deadline).  That email should CC your teammate.
+
+The idea behind the Breakup is to encourage equality in the teamwork.  If you
+aren't being a good team member, if you aren't doing your share of the work, 
+you need to change your ways or you will end up doing the last half (the difficult
+half) on your own.  Be a good team member!
+
+If your team breaks up, then both of you will have to make a new repo on GitHub
+Classrooms and port all of the code from Part 1 (you can do this with a single
+commit).  Both team members have a right to all code from Part 1.
+
+Obviously, Grace Days for a team that has broken up will be charged individually.
 
 ## Background
 
@@ -114,7 +133,7 @@ aren't valid SystemVerilog signal names).  They have `tri0` net types to allow
 them to be pulled down.  Driving the bus wires should be done with tri-state
 drivers.
 
-**SYNC** (i.e. start of packet) is `b0000_0001`.  This value will be passed
+**SYNC** (i.e. start of packet) is `'b0000_0001`.  This value will be passed
 into the **NRZI** module to create lots of edges on the signal wires.
 
 **EOP** (i.e. end of packet) is **XXJ**, where **X** means single-ended zero
@@ -328,9 +347,9 @@ interface USBWires; // this defines the interface
   tri0 DM;  // The D- wire
 endinterface
 
-//then, in another galaxy, far, far away…
+//then, in another galaxy, far, far away
 
-USBWires wires(); // this instantiates the interface with instance name “wires”
+USBWires wires(); // this instantiates the interface
 
 assign wires.DP = (enable) ? foo : 1'bz; // A tristate driver
 assign wires.DM = (enable) ? bar : 1'bz; // Another tristate driver
