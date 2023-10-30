@@ -3,7 +3,7 @@
 
 // USB DP DM interface
 interface USBWires;
-  tri0 DP;
+  tri1 DP;
   tri0 DM;
 endinterface
 
@@ -36,10 +36,10 @@ endinterface
 ////                 cases
 ////     - +STRESS:  TB directs host to write then read 100 random addresses
 ////     - +CORRUPT: TB directs host to read 10 random addresses, but the
-////                 device will send between 1 and 6 corrupt versions of the
+////                 device will send between 1 and 7 corrupt versions of the
 ////                 DATA0 packet each time; YOU WILL SEE AN ASSERTION FAILURE
 ////     - +TIMEOUT: TB directs host to read 10 random addresses, but the device
-////                 will timeout between 1 and 6 times
+////                 will timeout between 1 and 7 times
 ////     - +NAK:     TB directs host to write 10 random addresses, but the
 ////                 device will send 1 to 3 bogus NAKs during each OUT
 ////                 transaction; YOU WILL SEE AN ASSERTION FAILURE
@@ -332,7 +332,7 @@ module USBTB;
 
       repeat (10) begin
         mempage = $urandom;
-        fake_errors = $urandom_range(1, 6);
+        fake_errors = $urandom_range(1, 7);
         device_inst.setFakeCorrupt(fake_errors);
         $display("%m @%0t: TB->Host reading with %0d fake corrupt errors",
                  $time, fake_errors);
@@ -394,7 +394,7 @@ module USBTB;
 
       repeat (10) begin
         mempage = $urandom;
-        fake_errors = $urandom_range(1, 6);
+        fake_errors = $urandom_range(1, 7);
         device_inst.setFakeTimeout(fake_errors);
         $display("%m @%0t: TB->Host reading with %0d fake timeout errors",
                  $time, fake_errors);
