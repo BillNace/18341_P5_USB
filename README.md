@@ -519,7 +519,9 @@ Here is what a successful test output should look like:
 Only the prelab will respond with a message, such as the following, but it
 should be clear from the output whether your host passes or fails:
 
+```
   > {stuff} @{time}: Device saw correct prelab packet. Prelab successful.
+```
 
 If you experience assertion failures, the test hangs, or the tesbench quits
 before it is done, your design may need some attention.
@@ -601,6 +603,11 @@ to show all these intermediate points.
 
 Don't try to write the whole thing and then test it. Write and test parts, and
 keep adding. This will also help with partial credit.
+
+Also, you've now learned a bunch of cool SystemVerilog things that will be very
+handy for this project.  Don't be afraid to write an assertion.  For instance,
+it should be an easy thing to write a property to ensure your bit stuffing
+is working properly.
 
 ## Demos and Lateness
 
