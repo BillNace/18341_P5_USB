@@ -129,7 +129,7 @@ the voltage on **D+** is greater than the voltage on **D-**.  **K** is the
 opposite.
 
 The wires on the USB bus are named `DP` and `DM` (for **D+** and **D-**, which
-aren't valid SystemVerilog signal names).  They have `tri0` net types to allow
+aren't valid SystemVerilog signal names).  They have `tri` net types to allow
 them to be pulled down.  Driving the bus wires should be done with tri-state
 drivers.
 
@@ -347,7 +347,7 @@ down to **0** when nothing is driving them.  Make sure you use tristate drivers.
 
 ```systemverilog
 interface USBWires; // this defines the interface
-  tri0 DP;  // The D+ wire
+  tri1 DP;  // The D+ wire
   tri0 DM;  // The D- wire
 endinterface
 
