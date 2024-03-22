@@ -1,6 +1,6 @@
 # USB Protocol Engine Project
 
-18-341: Fall Semester of 2023
+18-341: Spring Semester of 2024
 
 ## Objective and Overview
 
@@ -10,7 +10,8 @@ will develop skills to implement multiple hardware threads at multiple layers of
 the protocol.  You will need to identify and design these layers and the signals
 that synchronize their activity.
 
-You will use the VCS simulator only, no FPGA board, for this project.
+You will use the VCS simulator only, no FPGA board, for this project.  Nevertheless,
+your code should be synthesizable.
 
 This is an **team** project.  See details in two sections from here.
 
@@ -18,11 +19,11 @@ This is an **team** project.  See details in two sections from here.
 
 Project value | 100 points
 --- | ---
-Project start | 1 November 2023
-Part 1 due |  13 November 2023 at 12:30pm
-Breakups due | 14 November 2023 at 12:30pm
-Project due | 29 November 2023 at 12:30pm
-Drop dead date | 30 November 2023 at 12:30pm
+Project start | 23 March 2024
+Part 1 due |  5 April 2024 at 3:30pm
+Breakups due | 6 April 2024 at 3:30pm
+Project due | 22 April 2024 at 3:30pm
+Drop dead date | 23 April 2024 at 3:30pm
 
 Remember!  You must have committed something by the drop-dead date!  *You must
 attempt every project*.  Not uploading anything and not showing up to explain
