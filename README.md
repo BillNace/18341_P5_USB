@@ -343,8 +343,9 @@ timers, retries, etc.
 We will use the SystemVerilog **interface** construct in this project, although
 minimally (See SVBook 6.5.1).  We have instantiated the interface for you in the
 **USBHost.sv** file.  Your host module already has it as a port (boy, are we nice
-guys…).  The signal lines themselves are of type **tri0**, so they are pulled
-down to **0** when nothing is driving them.  Make sure you use tristate drivers.
+guys…).  The signal lines themselves are of type **tri0** or **tri1**, 
+so they are pulled down to **0** or up to **1** when nothing is driving them.  
+Make sure you use tristate drivers.
 
 ```systemverilog
 interface USBWires; // this defines the interface
