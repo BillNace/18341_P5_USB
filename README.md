@@ -1,6 +1,6 @@
 # USB Protocol Engine Project
 
-18-341: Spring Semester of 2024
+18-341: Fall Semester of 2024
 
 ## Objective and Overview
 
@@ -19,11 +19,11 @@ This is an **team** project.  See details in two sections from here.
 
 Project value | 100 points
 --- | ---
-Project start | 23 March 2024
-Part 1 due |  5 April 2024 at 3:30pm
-Breakups due | 6 April 2024 at 3:30pm
-Project due | 22 April 2024 at 3:30pm
-Drop dead date | 23 April 2024 at 3:30pm
+Project start | 28 October 2024
+Part 1 due |  11 November 2024 at 3:30pm
+Breakups due | 12 November 2024 at 3:30pm
+Project due | 25 November 2024 at 3:30pm
+Drop dead date | 26 November 2024 at 3:30pm
 
 Remember!  You must have committed something by the drop-dead date!  *You must
 attempt every project*.  Not uploading anything and not showing up to explain
@@ -616,6 +616,12 @@ is working properly.
 
 Same as in previous projects, you will demo outside of class times on or near
 the due date.
+
+Demos will happen on the ECE servers, so make sure to use git to clone your repo 
+there (which means ensuring your GitHub credentials are set up for those 
+machines).  Ensure you can run all the commands on your code on those servers!  
+This is especially applicable for people who use SFTP to sync between local and 
+remote machines (hint: just use git!).
 
 **Define Late:**  Lateness is determined by the file dates of your repo.
 
