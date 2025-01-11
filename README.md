@@ -19,11 +19,11 @@ This is an **team** project.  See details in two sections from here.
 
 Project value | 100 points
 --- | ---
-Project start | 19 March 2025
-Part 1 due |  31 March 2025 at 3:30pm
-Breakups due | 1 April 2025 at 3:30pm
-Project due | 14 April 2025 at 3:30pm
-Drop dead date | 15 April 2025 at 3:30pm
+Project start | 20 March 2025
+Part 1 due |  1 April 2025 at 3:30pm
+Breakups due | 2 April 2025 at 3:30pm
+Project due | 15 April 2025 at 3:30pm
+Drop dead date | 16 April 2025 at 3:30pm
 
 Remember!  You must have committed something by the drop-dead date!  *You must
 attempt every project*.  Not uploading anything and not showing up to explain
