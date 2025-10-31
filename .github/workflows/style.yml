@@ -1,0 +1,24 @@
+name: Slang Tidy
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+  workflow_dispatch:
+
+jobs:
+  tidy:
+    uses: 18-341/project-actions/.github/workflows/slang-tidy.yml@v1
+    with:
+      producer_repo: 18-341/slang
+      slang_tag: master-latest
+      artifact_name: slang-Linux-gcc-11-release.tar.gz
+
+      config_repo: 18-341/project-actions
+      config_ref: main
+      config_path: config/.341-slang-tidy
+
+      base_branch: ${{ github.event.repository.default_branch }}
+      run_full_scan: "false"
+      fail_on_no_files: "false"
