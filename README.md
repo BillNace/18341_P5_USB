@@ -491,7 +491,7 @@ similar to Router lab.
 ////      e.g. ./simv -gui +SIMPLE +EDGE +vcs+finish+100000 +VERBOSE=3
 ////
 ////     - +PRELAB:  prelab checkoff; device accepts a valid OUT packet with
-////                 ENDP=`DATA_ENDP and ADDR=`DEVICE_ADDR
+////                 ENDP=`ADDR_ENDP and ADDR=`DEVICE_ADDR
 ////     - +SIMPLE:  TB directs host to write then read one random address
 ////     - +EDGE:    TB directs host to write then read carefully chosen
 ////                 addresses and data to cause CRC and bitstuffing edge-
