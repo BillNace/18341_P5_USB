@@ -1,6 +1,6 @@
 # USB Protocol Engine Project
 
-18-341: Fall Semester of 2025
+18-341: Spring Semester of 2026
 
 ## Objective and Overview
 
@@ -19,11 +19,11 @@ This is an **team** project.  See details in two sections from here.
 
 Project value | 100 points
 --- | ---
-Project start | 31 October 2025
-Part 1 due |  10 November 2025 at 3:30pm
-Breakups due | 11 November 2025 at 3:30pm
-Project due | 24 November 2025 at 3:30pm
-Drop dead date | 25 November 2025 at 3:30pm
+Project start | 19 March 2026
+Part 1 due |  31 March 2026 at 3:30pm
+Breakups due | 1 April 2026 at 3:30pm
+Project due | 14 April 2026 at 3:30pm
+Drop dead date | 15 April 2026 at 3:30pm
 
 Remember!  You must have committed something by the drop-dead date!  *You must
 attempt every project*.  Not uploading anything and not showing up to explain
@@ -552,11 +552,6 @@ In the repo, you will find the following files:
   has been done for you.
 
 * **USBTB.sv** — Our testbench, feel free to take a look!
-
-## 341 Linter
-
-Your repo will include the 341 "Linter" that will show up on git commits as "Slang/Tidy,"  just like in previous projects.  We hope it is useful to you.  We will not
-be using the linter output for grading.
 
 ## For Credit
 
